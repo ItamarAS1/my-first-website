@@ -1,0 +1,968 @@
+﻿<!DOCTYPE html>
+<html>
+<style>
+
+    h1 {
+        text-align: left;
+        margin-left: 50px;
+    }
+
+    p {
+        background-color: #ffffff;
+        border: 1px solid #2196F3;
+        border-radius: 10px;
+        padding: 20px;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.5;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        max-width: 600px; /* Limits the paragraph width */
+        margin: 20px auto; /* Centers the paragraph and adds spacing */
+        text-align: center; /* Centers the text */
+        transition: background-color 0.3s;
+    }
+
+        p:hover {
+            background-color: #f0f8ff; /* Background color change on hover */
+        }
+
+    a {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        color: white;
+        background-color: #4CAF50;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        a:hover {
+            background-color: #45a049;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+    /* Green glowing wave effect for header */
+    .glowing-wave-header {
+        font-size: 70px;
+        font-weight: bold;
+        color: green;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        position: relative;
+        background: linear-gradient(green, white, white);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: glowing-wave 3s ease-in-out infinite;
+        text-align: center;
+        margin: 40px 0; /* Added margin for spacing */
+    }
+
+    /* Keyframes for green glowing effect */
+    @keyframes glowing-wave {
+        0%, 100% {
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #32cd32, 0 0 20px rgba(0, 255, 0, 0.6);
+        }
+
+        50% {
+            text-shadow: 0 0 15px #00ff00, 0 0 30px #32cd32, 0 0 40px rgba(0, 255, 0, 0.8);
+        }
+    }
+
+    h2 {
+        font-size: 50px;
+        color: #333;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 3px;
+            background-color: green;
+            margin: 10px auto 0;
+            transition: width 0.6s ease;
+        }
+
+        h2:hover::after {
+            width: 100%;
+        }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+    }
+
+    /* Round edges only for the table's outer border */
+    table {
+        width: 50%;
+        margin: auto;
+        border-collapse: collapse;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 10px; /* Rounded edges for the table */
+        overflow: hidden; /* Ensures rounded corners work properly */
+    }
+
+    /* Ensure table cells have sharp corners */
+    th, td {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 0; /* Removes rounded corners from individual cells */
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    body {
+        background-image: url('images/background.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    a:link, a:visited {
+        background-color: green;
+        color: white;
+        padding: 15px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: darkgreen;
+    }
+    h1 {
+        text-align: left;
+        margin-left: 50px;
+    }
+
+    p {
+        background-color: #ffffff;
+        border: 1px solid #2196F3;
+        border-radius: 10px;
+        padding: 20px;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.5;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        max-width: 600px; /* Limits the paragraph width */
+        margin: 20px auto; /* Centers the paragraph and adds spacing */
+        text-align: center; /* Centers the text */
+        transition: background-color 0.3s;
+    }
+
+        p:hover {
+            background-color: #f0f8ff; /* Background color change on hover */
+        }
+
+    a {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        color: white;
+        background-color: #4CAF50;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        a:hover {
+            background-color: #45a049;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+    /* Green glowing wave effect for header */
+    .glowing-wave-header {
+        font-size: 70px;
+        font-weight: bold;
+        color: green;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        position: relative;
+        background: linear-gradient(green, white, white);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: glowing-wave 3s ease-in-out infinite;
+        text-align: center;
+        margin: 40px 0; /* Added margin for spacing */
+    }
+
+    /* Keyframes for green glowing effect */
+    @keyframes glowing-wave {
+        0%, 100% {
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #32cd32, 0 0 20px rgba(0, 255, 0, 0.6);
+        }
+
+        50% {
+            text-shadow: 0 0 15px #00ff00, 0 0 30px #32cd32, 0 0 40px rgba(0, 255, 0, 0.8);
+        }
+    }
+
+    h2 {
+        font-size: 50px;
+        color: #333;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 3px;
+            background-color: green;
+            margin: 10px auto 0;
+            transition: width 0.6s ease;
+        }
+
+        h2:hover::after {
+            width: 100%;
+        }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+    }
+
+    /* Round edges only for the table's outer border */
+    table {
+        width: 50%;
+        margin: auto;
+        border-collapse: collapse;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 10px; /* Rounded edges for the table */
+        overflow: hidden; /* Ensures rounded corners work properly */
+    }
+
+    /* Ensure table cells have sharp corners */
+    th, td {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 0; /* Removes rounded corners from individual cells */
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    body {
+        background-image: url('images/background.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    a:link, a:visited {
+        background-color: green;
+        color: white;
+        padding: 15px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: darkgreen;
+    }
+    h1 {
+        text-align: left;
+        margin-left: 50px;
+    }
+
+    p {
+        background-color: #ffffff;
+        border: 1px solid #2196F3;
+        border-radius: 10px;
+        padding: 20px;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.5;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        max-width: 600px; /* Limits the paragraph width */
+        margin: 20px auto; /* Centers the paragraph and adds spacing */
+        text-align: center; /* Centers the text */
+        transition: background-color 0.3s;
+    }
+
+        p:hover {
+            background-color: #f0f8ff; /* Background color change on hover */
+        }
+
+    a {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        color: white;
+        background-color: #4CAF50;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        a:hover {
+            background-color: #45a049;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+    /* Green glowing wave effect for header */
+    .glowing-wave-header {
+        font-size: 70px;
+        font-weight: bold;
+        color: green;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        position: relative;
+        background: linear-gradient(green, white, white);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: glowing-wave 3s ease-in-out infinite;
+        text-align: center;
+        margin: 40px 0; /* Added margin for spacing */
+    }
+
+    /* Keyframes for green glowing effect */
+    @keyframes glowing-wave {
+        0%, 100% {
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #32cd32, 0 0 20px rgba(0, 255, 0, 0.6);
+        }
+
+        50% {
+            text-shadow: 0 0 15px #00ff00, 0 0 30px #32cd32, 0 0 40px rgba(0, 255, 0, 0.8);
+        }
+    }
+
+    h2 {
+        font-size: 50px;
+        color: #333;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 3px;
+            background-color: green;
+            margin: 10px auto 0;
+            transition: width 0.6s ease;
+        }
+
+        h2:hover::after {
+            width: 100%;
+        }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+    }
+
+    /* Round edges only for the table's outer border */
+    table {
+        width: 50%;
+        margin: auto;
+        border-collapse: collapse;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 10px; /* Rounded edges for the table */
+        overflow: hidden; /* Ensures rounded corners work properly */
+    }
+
+    /* Ensure table cells have sharp corners */
+    th, td {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 0; /* Removes rounded corners from individual cells */
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    body {
+        background-image: url('images/background.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    a:link, a:visited {
+        background-color: green;
+        color: white;
+        padding: 15px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: darkgreen;
+    }
+    h1 {
+        text-align: left;
+        margin-left: 50px;
+    }
+
+    p {
+        background-color: #ffffff;
+        border: 1px solid #2196F3;
+        border-radius: 10px;
+        padding: 20px;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.5;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        max-width: 600px; /* Limits the paragraph width */
+        margin: 20px auto; /* Centers the paragraph and adds spacing */
+        text-align: center; /* Centers the text */
+        transition: background-color 0.3s;
+    }
+
+        p:hover {
+            background-color: #f0f8ff; /* Background color change on hover */
+        }
+
+    a {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        color: white;
+        background-color: #4CAF50;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        a:hover {
+            background-color: #45a049;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+    /* Green glowing wave effect for header */
+    .glowing-wave-header {
+        font-size: 70px;
+        font-weight: bold;
+        color: green;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        position: relative;
+        background: linear-gradient(green, white, white);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: glowing-wave 3s ease-in-out infinite;
+        text-align: center;
+        margin: 40px 0; /* Added margin for spacing */
+    }
+
+    /* Keyframes for green glowing effect */
+    @keyframes glowing-wave {
+        0%, 100% {
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #32cd32, 0 0 20px rgba(0, 255, 0, 0.6);
+        }
+
+        50% {
+            text-shadow: 0 0 15px #00ff00, 0 0 30px #32cd32, 0 0 40px rgba(0, 255, 0, 0.8);
+        }
+    }
+
+    h2 {
+        font-size: 50px;
+        color: #333;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 3px;
+            background-color: green;
+            margin: 10px auto 0;
+            transition: width 0.6s ease;
+        }
+
+        h2:hover::after {
+            width: 100%;
+        }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+    }
+
+    /* Round edges only for the table's outer border */
+    table {
+        width: 50%;
+        margin: auto;
+        border-collapse: collapse;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 10px; /* Rounded edges for the table */
+        overflow: hidden; /* Ensures rounded corners work properly */
+    }
+
+    /* Ensure table cells have sharp corners */
+    th, td {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 0; /* Removes rounded corners from individual cells */
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    body {
+        background-image: url('images/background.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    a:link, a:visited {
+        background-color: green;
+        color: white;
+        padding: 15px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: darkgreen;
+    }
+    h1 {
+        text-align: left;
+        margin-left: 50px;
+    }
+
+    p {
+        background-color: #ffffff;
+        border: 1px solid #2196F3;
+        border-radius: 10px;
+        padding: 20px;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.5;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        max-width: 600px; /* Limits the paragraph width */
+        margin: 20px auto; /* Centers the paragraph and adds spacing */
+        text-align: center; /* Centers the text */
+        transition: background-color 0.3s;
+    }
+
+        p:hover {
+            background-color: #f0f8ff; /* Background color change on hover */
+        }
+
+    a {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        color: white;
+        background-color: #4CAF50;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        a:hover {
+            background-color: #45a049;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+    /* Green glowing wave effect for header */
+    .glowing-wave-header {
+        font-size: 70px;
+        font-weight: bold;
+        color: green;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        position: relative;
+        background: linear-gradient(green, white, white);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: glowing-wave 3s ease-in-out infinite;
+        text-align: center;
+        margin: 40px 0; /* Added margin for spacing */
+    }
+
+    /* Keyframes for green glowing effect */
+    @keyframes glowing-wave {
+        0%, 100% {
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #32cd32, 0 0 20px rgba(0, 255, 0, 0.6);
+        }
+
+        50% {
+            text-shadow: 0 0 15px #00ff00, 0 0 30px #32cd32, 0 0 40px rgba(0, 255, 0, 0.8);
+        }
+    }
+
+    h2 {
+        font-size: 50px;
+        color: #333;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 3px;
+            background-color: green;
+            margin: 10px auto 0;
+            transition: width 0.6s ease;
+        }
+
+        h2:hover::after {
+            width: 100%;
+        }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+    }
+
+    /* Round edges only for the table's outer border */
+    table {
+        width: 50%;
+        margin: auto;
+        border-collapse: collapse;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 10px; /* Rounded edges for the table */
+        overflow: hidden; /* Ensures rounded corners work properly */
+    }
+
+    /* Ensure table cells have sharp corners */
+    th, td {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 0; /* Removes rounded corners from individual cells */
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    body {
+        background-image: url('images/background2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    a:link, a:visited {
+        background-color: green;
+        color: white;
+        padding: 15px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: darkgreen;
+    }
+</style>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <title>ליגת העל בכדורגל</title>
+</head>
+<body>
+
+<h2 class="glowing-wave-header"><div align="center" class="title">!ברוכים הבאים לאתר ליגת העל בכדורגל</div></h2>
+    <h1><a href="http://localhost:60327/Gallery.html" target="_blank">האוהדים בארץ</a></h1>
+    <table align="center">
+        <tr></tr>
+        <th colspan="10" align="center">טבלת ליגת העל בכדורגל</th>
+        </tr>
+        <th>שערי חובה</th>
+        <th>שערי זכות</th>
+        <th>יחס שערים</th>
+        <th>הפסדים</th>
+        <th>תיקו</th>
+        <th>נצחונות</th>
+        <th>נקודות</th>
+        <th>משחקים</th>
+        <th>שם הקבוצה</th>
+        <th>מיקום בטבלה</th>
+        </tr>
+
+        <tr>
+            <td align="right">1</td>
+            <td align="right">6</td>
+            <td align="right">5</td>
+            <td align="right">0</td>
+            <td align="right">0</td>
+            <td align="right">3</td>
+            <td align="right">9</td>
+            <td align="right">3</td>
+            <td align="right">
+                מכבי תל אביב
+                <img src="images/Maccabi_Tel_Aviv_FC.png" width="30" />
+            </td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td align="right">2</td>
+            <td align="right">8</td>
+            <td align="right">6</td>
+            <td align="right">0</td>
+            <td align="right">1</td>
+            <td align="right">2</td>
+            <td align="right">7</td>
+            <td align="right">3</td>
+            <td align="right">
+                מכבי חיפה
+                <img src="images/Maccabi_Haifa_FC_Logo_2023.png" width="25" />
+            <td>2</td>
+            </td>
+        <tr>
+            <td align="right">6</td>
+            <td align="right">9</td>
+            <td align="right">3</td>
+            <td align="right">0</td>
+            <td align="right">1</td>
+            <td align="right">2</td>
+            <td align="right">7</td>
+            <td align="right">3</td>
+            <td align="right">
+                מכבי בני ריינה
+                <img src="images/Bnei Reineh.png" width="30" />
+            </td>
+            <td>3</td>
+        </tr>
+
+        <tr>
+            <td align="right">3</td>
+            <td align="right">5</td>
+            <td align="right">2</td>
+            <td align="right">1</td>
+            <td align="right">0</td>
+            <td align="right">2</td>
+            <td align="right">6</td>
+            <td align="right">3</td>
+            <td align="right">
+                בית"ר ירושלים
+                <img src="images/Beitar_Jerusalem.png" width="25" />
+            </td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td align="right">2</td>
+            <td align="right">4</td>
+            <td align="right">2</td>
+            <td align="right">0</td>
+            <td align="right">2</td>
+            <td align="right">1</td>
+            <td align="right">4</td>
+            <td align="right">3</td>
+            <td align="right">
+                בני סכנין*
+                <img src="images/Bnei_Sakhnin.png" width="25" />
+            </td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td align="right">3</td>
+            <td align="right">5</td>
+            <td align="right">2</td>
+            <td align="right">1</td>
+            <td align="right">1</td>
+            <td align="right">1</td>
+            <td align="right">4</td>
+            <td align="right">3</td>
+            <td align="right">
+                הפועל חיפה
+                <img src="images/Hapoel_Haifa_Football_Club_Logo.png" width="25" />
+            </td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td align="right">6</td>
+            <td align="right">6</td>
+            <td align="right">0</td>
+            <td align="right">1</td>
+            <td align="right">1</td>
+            <td align="right">1</td>
+            <td align="right">4</td>
+            <td align="right">3</td>
+            <td align="right">
+                מ.ס. אשדוד
+                <img src="images/Ashdod.png" width="25" />
+            </td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td align="right">1</td>
+            <td align="right">1</td>
+            <td align="right">0</td>
+            <td align="right">1</td>
+            <td align="right">1</td>
+            <td align="right">1</td>
+            <td align="right">3</td>
+            <td align="right">3</td>
+            <td align="right">
+                הפועל באר שבע*
+                <img src="images/hapoel-beer-sheva-logo.png" width="25" />
+            </td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td align="right">3</td>
+            <td align="right">3</td>
+            <td align="right">0</td>
+            <td align="right">2</td>
+            <td align="right">0</td>
+            <td align="right">1</td>
+            <td align="right">3</td>
+            <td align="right">3</td>
+            <td align="right">
+                עירוני קריית שמונה
+                <img src="images/Hapoel_Ironi_Kiryat_Shmona_badge.png" width="25" />
+            </td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td align="right">5</td>
+            <td align="right">1</td>
+            <td align="right">-4</td>
+            <td align="right">2</td>
+            <td align="right">0</td>
+            <td align="right">1</td>
+            <td align="right">3</td>
+            <td align="right">3</td>
+            <td align="right">
+                מכבי פתח תקווה
+                <img src="images/Maccabi_Petah_Tikva.png" width="25" />
+            </td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td align="right">6</td>
+            <td align="right">1</td>
+            <td align="right">-5</td>
+            <td align="right">2</td>
+            <td align="right">0</td>
+            <td align="right">1</td>
+            <td align="right">3</td>
+            <td align="right">3</td>
+            <td align="right">
+                עירוני טבריה
+                <img src="images/Ironi_Tiberias_FC.png" width="25" />
+            </td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td align="right">2</td>
+            <td align="right">1</td>
+            <td align="right">-1</td>
+            <td align="right">1</td>
+            <td align="right">2</td>
+            <td align="right">0</td>
+            <td align="right">2</td>
+            <td align="right">3</td>
+            <td align="right">
+                הפועל חדרה
+                <img src="images/fc-hapoel-hadera-logo.png" width="25" />
+            </td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td align="right">5</td>
+            <td align="right">1</td>
+            <td align="right">-4</td>
+            <td align="right">1</td>
+            <td align="right">1</td>
+            <td align="right">0</td>
+            <td align="right">1</td>
+            <td align="right">2</td>
+            <td align="right">
+                הפועל ירושלים
+                <img src="images/FC_Hapoel_Jerusalem_2021.png" width="25" />
+            </td>
+            <td>13</td>
+
+        </tr>
+        <tr>
+            <td align="right">8</td>
+            <td align="right">3</td>
+            <td align="right">-5</td>
+            <td align="right">3</td>
+            <td align="right">0</td>
+            <td align="right">0</td>
+            <td align="right">0</td>
+            <td align="right">3</td>
+            <td align="right">
+                מכבי נתניה
+                <img src="images/Maccabi_Netanya.png" width="25" />
+            </td>
+            <td>14</td>
+
+        </tr>
+    </table>
+    <p  colspan="8">נקודה הופחתה ממאזנה של הפועל באר שבע ובני סכנין בגין התפרעות אוהדים*</p>
+</body>
+</html>
